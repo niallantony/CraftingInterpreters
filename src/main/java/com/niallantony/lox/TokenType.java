@@ -1,4 +1,4 @@
-package com.niallantony;
+package com.niallantony.lox;
 
 public enum TokenType {
     // single-characters

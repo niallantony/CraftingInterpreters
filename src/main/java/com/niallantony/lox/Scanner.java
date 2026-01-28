@@ -1,11 +1,11 @@
-package com.niallantony;
+package com.niallantony.lox;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.niallantony.TokenType.*;
+import static com.niallantony.lox.TokenType.*;
 
 public class Scanner {
     private final String source;

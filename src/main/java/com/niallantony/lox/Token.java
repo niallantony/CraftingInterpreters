@@ -1,4 +1,4 @@
-package com.niallantony;
+package com.niallantony.lox;
 
 public class Token {
     final TokenType type;

@@ -1,4 +1,4 @@
-package com.niallantony;
+package com.niallantony.lox;
 
 import java.io.BufferedReader;
 import java.io.IOException;
