@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class GenerateAst {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         if (args.length != 1) {
             System.err.println("Usage: generate_ast <output directory>");
             System.exit(64);
@@ -26,7 +26,7 @@ public class GenerateAst {
         String path = outputDir + "/" + basename + ".java";
         PrintWriter writer = new PrintWriter(path, "utf-8");
 
-        writer.println("package com.craftinginterpreters.lox;");
+        writer.println("package com.niallantony.lox;");
         writer.println();
         writer.println("import java.util.List;");
         writer.println("abstract class " + basename + " {");
@@ -38,7 +38,36 @@ public class GenerateAst {
         }
 
         writer.println("}");
-        writer.println();
+        writer.close();
 
+    }
+
+    private static void defineType(
+            PrintWriter writer,
+            String basename,
+            String className,
+            String fieldList
+    ) {
+        writer.println(" static class " + className + " extends " + basename + " {");
+
+        // constructor
+        writer.println("    " + className + "(" + fieldList + ") {");
+
+        // store parameters
+        String[] fields = fieldList.split(", ");
+        for (String field : fields) {
+            String name = field.split(" ")[1];
+            writer.println("    this." + name + " = " + name + ";");
+        }
+
+        writer.println("    }");
+
+        // fields
+        writer.println();
+        for (String field : fields) {
+            writer.println("    final " + field + ";");
+        }
+
+        writer.println("  }");
     }
 }
