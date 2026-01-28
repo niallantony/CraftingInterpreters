@@ -1,0 +1,7 @@
+print "hello"
+// comment
+1 + 12.3
+/* Multi
+Line
+Comment */
+var variable = 23
