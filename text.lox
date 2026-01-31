@@ -1,7 +1,10 @@
-print "hello"
+var a = 10;
+var b = 2;
+print "hello";
 // comment
-1 + 12.3
+print (1 + 12.3);
+print true;
+print (a * b);
 /* Multi
 Line
 Comment */
-var variable = 23
