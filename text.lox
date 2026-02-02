@@ -1,29 +1,12 @@
 var a = 10;
 var b = 2;
+var c;
 print "hello";
 // comment
 print (1 + 12.3);
 print true;
 print (a * b);
+print c;
 /* Multi
 Line
 Comment */
-var a = "global a";
-var b = "global b";
-var c = "global c";
-{
-  var a = "outer a";
-  var b = "outer b";
-  {
-    var a = "inner a";
-    print a;
-    print b;
-    print c;
-  }
-  print a;
-  print b;
-  print c;
-}
-print a;
-print b;
-print c;
