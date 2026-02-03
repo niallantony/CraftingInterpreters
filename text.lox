@@ -1,12 +1,5 @@
-var a = 10;
-var b = 2;
-var c;
-print "hello";
-// comment
-print (1 + 12.3);
-print true;
-print (a * b);
-print c;
-/* Multi
-Line
-Comment */
+fun sayHi(first, last) {
+    print "Hi " + first + " " + last + "!";
+}
+
+sayHi("Dear", "Reader");
