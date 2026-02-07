@@ -2,13 +2,32 @@ fun sayHi(first, last) {
     print "Hi " + first + " " + last + "!";
 }
 
+class DevonshireCream {
+    serveOn() {
+     return "scones";
+    }
+}
+
+print DevonshireCream;
+
+var devonCream = DevonshireCream();
+print devonCream.serveOn();
+
+class Bagel {}
+
+var bagel = Bagel();
+
+print bagel;
+
 sayHi("Dear", "Reader");
 
-fun fib(n) {
-    if (n <= 1) return n;
-    return fib(n - 2) + fib(n - 1);
+class Cake {
+  taste() {
+    var adjective = "delicious";
+    print "The " + this.flavor + " cake is " + adjective + "!";
+  }
 }
 
-for (var i = 0; i < 20; i = i + 1) {
-    print fib(i);
-}
+var cake = Cake();
+cake.flavor = "German chocolate";
+cake.taste();
