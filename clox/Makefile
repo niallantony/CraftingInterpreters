@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -std=c11 -g
 TARGET = clox
 
-SRC = main.c chunk.c debug.c memory.c
+SRC = main.c chunk.c debug.c memory.c value.c
 OBJ = $(SRC:.c=.o)
 
 $(TARGET): $(OBJ)
