@@ -95,6 +95,8 @@ static TokenType identifierType() {
   case 'w':
     return checkKeyword(1, 4, "hile", TOKEN_WHILE);
   }
+
+  return TOKEN_IDENTIFIER;
 }
 
 static char advance() {
@@ -123,7 +125,7 @@ static char peekNext() {
 static bool isDigit(char c) { return c >= '0' && c <= '9'; }
 
 static bool isAlpha(char c) {
-  return (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z' || c == '_');
+  return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c == '_');
 }
 
 static Token string() {
