@@ -28,7 +28,10 @@ static void runtimeError(const char *format, ...) {
   resetStack();
 }
 
-void initVM() { resetStack(); }
+void initVM() {
+  resetStack();
+  vm.objects = NULL;
+}
 
 static Value peek(int distance) { return vm.stackTop[-1 - distance]; }
 
@@ -50,7 +53,7 @@ static void concatenate() {
   push(OBJ_VAL(result));
 }
 
-void freeVM() {}
+void freeVM() { freeObjects(); }
 
 static InterpretResult run() {
 #define READ_BYTE() (*vm.ip++)
