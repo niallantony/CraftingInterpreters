@@ -5,6 +5,7 @@
 #include "debug.h"
 #include "memory.h"
 #include "object.h"
+#include "table.h"
 #include "value.h"
 #include <stdarg.h>
 #include <stdint.h>
@@ -31,6 +32,7 @@ static void runtimeError(const char *format, ...) {
 void initVM() {
   resetStack();
   vm.objects = NULL;
+  initTable(&vm.strings);
 }
 
 static Value peek(int distance) { return vm.stackTop[-1 - distance]; }
@@ -53,7 +55,10 @@ static void concatenate() {
   push(OBJ_VAL(result));
 }
 
-void freeVM() { freeObjects(); }
+void freeVM() {
+  freeTable(&vm.strings);
+  freeObjects();
+}
 
 static InterpretResult run() {
 #define READ_BYTE() (*vm.ip++)
