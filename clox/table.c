@@ -132,7 +132,7 @@ ObjString *tableFindString(Table *table, const char *chars, int length,
     } else if (entry->key->length == length && entry->key->hash == hash &&
                memcmp(entry->key->chars, chars, length) == 0) {
       // interned string present
-      return entry->key
+      return entry->key;
     }
 
     index = (index + 1) % table->capacity;
